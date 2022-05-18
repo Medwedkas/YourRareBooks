@@ -7,4 +7,4 @@ def index(request):  # HttpRequest
 
 
 def booksList(request):
-    return HttpResponse("<h1>Список книг в наличии</h1>")
+    return render(request, 'BooksCatalog/index.html')
