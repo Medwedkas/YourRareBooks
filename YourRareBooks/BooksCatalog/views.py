@@ -7,4 +7,20 @@ def index(request):  # HttpRequest
 
 
 def booksList(request):
-    return HttpResponse("<h1>Список книг в наличии</h1>")
+    return render(request, 'BooksCatalog/index.html')
+
+
+def bookSales(request):
+    return render(request, 'BooksCatalog/bookSales.html')
+
+
+def weSeek(request):
+    return render(request, 'BooksCatalog/weSeek.html')
+
+
+def about(request):
+    return render(request, 'BooksCatalog/about.html')
+
+
+def basket(request):
+    return render(request, 'BooksCatalog/basket.html')
