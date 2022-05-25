@@ -1,13 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.views import View
+
+from .models import *
 
 
 def index(request):  # HttpRequest
     return HttpResponse("Страница приложения BooksCatalog")
-
-
-def booksList(request):
-    return render(request, 'BooksCatalog/index.html')
 
 
 def bookSales(request):
@@ -24,3 +23,9 @@ def about(request):
 
 def basket(request):
     return render(request, 'BooksCatalog/basket.html')
+
+
+class CatalogView(View):
+    def get(self, request):
+        books = Books.objects.all()
+        return render(request, "BooksCatalog/index.html", {"book_list": books})
