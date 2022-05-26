@@ -7,7 +7,7 @@ urlpatterns = [
     path('bookSales', bookSales),
     path('weSeek', weSeek),
     path('about', about),
-    path('basket', basket),
+
 
 
 ]
