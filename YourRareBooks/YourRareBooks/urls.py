@@ -21,7 +21,6 @@ from BooksCatalog.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('basket/', include('cart.urls', namespace='cart')),
     path('', include('BooksCatalog.urls')),
 ]
 
