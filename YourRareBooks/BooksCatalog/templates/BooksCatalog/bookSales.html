@@ -19,32 +19,29 @@
         <a class="me-3 py-2 text-dark text-decoration-none" href="/bookSales">Заявка на продажу</a>
         <a class="me-3 py-2 text-dark text-decoration-none" href="/weSeek">Мы ищем</a>
         <a class="me-3 py-2 text-dark text-decoration-none" href="/about">О нас</a>
-        <a class="py-2 text-dark text-decoration-none" href="/basket">Корзина</a>
+        <a class="py-2 text-dark text-decoration-none" href="/basket">Хочу купить</a>
     </nav>
 </div>
 <h1>Подать заявку на продажу книги</h1>
-
-<div class="container">
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">© 2022 YourRareBooks</p>
-
-        <a href="/"
-           class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-            <svg class="bi me-2" width="40" height="32">
-                <use xlink:href="#bootstrap"></use>
-            </svg>
-        </a>
-
-        <ul class="nav col-md-4 justify-content-end">
-            <li class="nav-item"><a href="/bookSales" class="nav-link px-2 text-muted">Заявка на продажу</a></li>
-            <li class="nav-item"><a href="/weSeek" class="nav-link px-2 text-muted">Мы ищем</a></li>
-            <li class="nav-item"><a href="/about" class="nav-link px-2 text-muted">О нас</a></li>
-            <li class="nav-item"><a href="/basket" class="nav-link px-2 text-muted">Корзина</a></li>
-        </ul>
-    </footer>
+<p>Если у вас есть редкая книга которую вы хотите продать, то заполните форму ниже. В течении 2-ух дней с вами свяжется
+    администратор</p>
+<hr>
+<div align="center" style="margin-left: 32%; width: 500px; margin-top: 50px;" class="row mb-2">
+    <h2>Форма</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.first_name }} <br>
+        {{ form.second_name }} <br>
+        {{ form.email }} <br>
+        {{ form.phone_number }} <br>
+        {{ form.book_name }} <br>
+        {{ form.book_author }} <br>
+        {{ form.phouse }} <br>
+        {{ form.release_date }} <br>
+        <span> {{ error }} </span>
+        <button align="center" class="btn btn-success" type="submit">Отправить заявку</button>
+    </form>
 </div>
 
 </body>
-
-
 </html>

@@ -21,7 +21,7 @@
             <a class="me-3 py-2 text-dark text-decoration-none" href="/bookSales">Заявка на продажу</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="/weSeek">Мы ищем</a>
             <a class="me-3 py-2 text-dark text-decoration-none" href="/about">О нас</a>
-            <a class="py-2 text-dark text-decoration-none" href="/basket">Корзина</a>
+            <a class="py-2 text-dark text-decoration-none" href="/basket">Хочу купить</a>
         </nav>
     </div>
 
@@ -29,24 +29,30 @@
 
 
 <body>
-<h2 align="center">Каталог книг</h2>
+<h2 style="margin-bottom: 20px" align="center">Каталог книг</h2>
 
 <div class="container"
      style="display: flex;flex-wrap: wrap;align-content: flex-start;height: 100%; justify-content: space-around">
     {% for books in book_list %}
-    <div class="row featurette">
+    <div style="padding-top: 20px" class="row featurette">
         <div class="col-md-7">
-            <h2 class="featurette-heading fw-normal lh-1"> {{books.name}} <span class="text-muted">{{books.price}} ₽</span>
+            <h2 style="margin-bottom: 20px" class="featurette-heading fw-normal lh-1"> {{books.name}} <span
+                    class="text-muted">{{books.price}} ₽</span>
             </h2>
-            <p> class="lead" {{books.}}</p>
-            <p class="lead">{{books.description}}</p>
+            <p style="margin-bottom: 20px" class="lead"><b>Издательство:</b> {{books.phouse}}</p>
+            <p style="margin-bottom: 20px" class="lead"><b>Дата выпуска:</b> {{books.release_date}}</p>
+            <details>
+                <summary><b>Описание</b></summary>
+                <p class="lead"> {{books.description}}</p>
+            </details>
         </div>
         <div class="col-md-5">
             <img src=" {{ books.photo.url }} " width="500" height="500">
 
         </div>
-        <hr class="featurette-divider">
+        <hr style="margin-top: 20px" class="featurette-divider">
     </div>
+
     {% endfor %}
 </div>
 </body>

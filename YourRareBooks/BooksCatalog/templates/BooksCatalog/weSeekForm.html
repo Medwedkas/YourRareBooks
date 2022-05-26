@@ -53,15 +53,21 @@
 </div>
 
 <div align="center" style="margin-left: 32%; width: 500px; margin-top: 50px;" class="row mb-2">
-
-
-    <form action="weSeekForm">
+    <h2>Форма</h2>
+    <form method="post">
         {% csrf_token %}
-        <button align="center" class="btn btn-success" type="submit">
-            Заполнить
-            форму
-        </button>
+        {{ form.first_name }} <br>
+        {{ form.second_name }} <br>
+        {{ form.email }} <br>
+        {{ form.phone_number }} <br>
+        {{ form.book_name }} <br>
+        {{ form.book_author }} <br>
+        {{ form.phouse }} <br>
+        {{ form.release_date }} <br>
+        <button align="center" class="btn btn-success" type="submit">Отправить заявку</button> <br>
+        <span> {{ error }} </span>
     </form>
 </div>
+
 </body>
 </html>
