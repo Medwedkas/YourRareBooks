@@ -3,6 +3,7 @@ from .models import Books
 from .models import Orders
 from .models import WishList
 from .models import Wish_request
+from .models import Buyers
 
 
 @admin.register(Books)
@@ -23,6 +24,11 @@ class WishListAdmin(admin.ModelAdmin):
 
 
 @admin.register(Wish_request)
+class WishRequestAdmin(admin.ModelAdmin):
+    list_display = ['first_name', 'second_name', 'email', 'phone_number', 'book_name', 'state']
+    list_editable = ['state']
+
+@admin.register(Buyers)
 class WishRequestAdmin(admin.ModelAdmin):
     list_display = ['first_name', 'second_name', 'email', 'phone_number', 'book_name', 'state']
     list_editable = ['state']
